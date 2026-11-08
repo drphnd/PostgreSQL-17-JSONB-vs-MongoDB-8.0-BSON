@@ -8,7 +8,6 @@ echo "[0] ruang bebas drive C: ${FREE_C:-?} GB (minimum ${NEED_GB} GB)"
 if [ -n "$FREE_C" ] && [ "$FREE_C" -lt "$NEED_GB" ]; then echo "ABORT: ruang C: kurang"; exit 1; fi
 SCHEME=$(/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -NoProfile -Command "powercfg /getactivescheme" 2>/dev/null | tr -d '\r')
 echo "[0b] mode daya: ${SCHEME:-tidak terbaca}"
-for i in $(seq 1 60); do docker info >/dev/null 2>&1 && break; sleep 2; done
 docker info >/dev/null 2>&1 || { echo "ABORT: Docker belum jalan"; exit 1; }
 docker compose up -d
 for i in $(seq 1 60); do docker exec ta_postgres_17 pg_isready -U admin -d yelp_db >/dev/null 2>&1 && break; sleep 2; done
