@@ -1,0 +1,51 @@
+SET
+                                                                                   QUERY PLAN                                                                                   
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=0.29..1262.16 rows=50 width=881) (actual time=1.719..4.925 rows=50 loops=1)
+   Buffers: shared hit=86 read=2
+   ->  Index Scan using idx_outdoor_seating on yelp_business  (cost=0.29..42373.76 rows=1679 width=881) (actual time=1.717..4.909 rows=50 loops=1)
+         Index Cond: (((document -> 'attributes'::text) ->> 'OutdoorSeating'::text) = 'true'::text)
+         Filter: ((((document -> 'attributes'::text) ->> 'RestaurantsPriceRange2'::text) = '2'::text) AND (((document -> 'attributes'::text) ->> 'WiFi'::text) = 'free'::text))
+         Rows Removed by Filter: 86
+         Buffers: shared hit=86 read=2
+ Planning:
+   Buffers: shared hit=184
+ Planning Time: 2.387 ms
+ Execution Time: 4.960 ms
+(11 rows)
+
+------
+SET
+                                                                                   QUERY PLAN                                                                                   
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=0.29..1262.16 rows=50 width=881) (actual time=0.059..0.317 rows=50 loops=1)
+   Buffers: shared hit=88
+   ->  Index Scan using idx_outdoor_seating on yelp_business  (cost=0.29..42373.76 rows=1679 width=881) (actual time=0.058..0.310 rows=50 loops=1)
+         Index Cond: (((document -> 'attributes'::text) ->> 'OutdoorSeating'::text) = 'true'::text)
+         Filter: ((((document -> 'attributes'::text) ->> 'RestaurantsPriceRange2'::text) = '2'::text) AND (((document -> 'attributes'::text) ->> 'WiFi'::text) = 'free'::text))
+         Rows Removed by Filter: 86
+         Buffers: shared hit=88
+ Planning:
+   Buffers: shared hit=184
+ Planning Time: 1.257 ms
+ Execution Time: 0.346 ms
+(11 rows)
+
+------
+SET
+                                                                                   QUERY PLAN                                                                                   
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=0.29..1262.16 rows=50 width=881) (actual time=0.059..0.313 rows=50 loops=1)
+   Buffers: shared hit=88
+   ->  Index Scan using idx_outdoor_seating on yelp_business  (cost=0.29..42373.76 rows=1679 width=881) (actual time=0.058..0.306 rows=50 loops=1)
+         Index Cond: (((document -> 'attributes'::text) ->> 'OutdoorSeating'::text) = 'true'::text)
+         Filter: ((((document -> 'attributes'::text) ->> 'RestaurantsPriceRange2'::text) = '2'::text) AND (((document -> 'attributes'::text) ->> 'WiFi'::text) = 'free'::text))
+         Rows Removed by Filter: 86
+         Buffers: shared hit=88
+ Planning:
+   Buffers: shared hit=184
+ Planning Time: 1.335 ms
+ Execution Time: 0.341 ms
+(11 rows)
+
+------

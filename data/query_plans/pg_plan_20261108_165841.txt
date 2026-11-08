@@ -1,0 +1,45 @@
+                                                                                                                            QUERY PLAN                                                                                                                             
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=0.00..660.37 rows=50 width=881) (actual time=1.395..14.807 rows=50 loops=1)
+   Buffers: shared hit=108
+   ->  Seq Scan on yelp_business  (cost=0.00..22175.24 rows=1679 width=881) (actual time=1.393..14.749 rows=50 loops=1)
+         Filter: ((((document -> 'attributes'::text) ->> 'RestaurantsPriceRange2'::text) = '2'::text) AND (((document -> 'attributes'::text) ->> 'WiFi'::text) = 'free'::text) AND (((document -> 'attributes'::text) ->> 'OutdoorSeating'::text) = 'true'::text))
+         Rows Removed by Filter: 893
+         Buffers: shared hit=108
+ Planning:
+   Buffers: shared hit=181 read=3 dirtied=1
+ Planning Time: 20.994 ms
+ Execution Time: 17.130 ms
+(10 rows)
+
+------
+                                                                                                                            QUERY PLAN                                                                                                                             
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=0.00..660.37 rows=50 width=881) (actual time=0.103..13.896 rows=50 loops=1)
+   Buffers: shared hit=122
+   ->  Seq Scan on yelp_business  (cost=0.00..22175.24 rows=1679 width=881) (actual time=0.101..13.875 rows=50 loops=1)
+         Filter: ((((document -> 'attributes'::text) ->> 'RestaurantsPriceRange2'::text) = '2'::text) AND (((document -> 'attributes'::text) ->> 'WiFi'::text) = 'free'::text) AND (((document -> 'attributes'::text) ->> 'OutdoorSeating'::text) = 'true'::text))
+         Rows Removed by Filter: 1018
+         Buffers: shared hit=122
+ Planning:
+   Buffers: shared hit=184
+ Planning Time: 1.285 ms
+ Execution Time: 13.947 ms
+(10 rows)
+
+------
+                                                                                                                            QUERY PLAN                                                                                                                             
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=0.00..660.37 rows=50 width=881) (actual time=0.048..13.437 rows=50 loops=1)
+   Buffers: shared hit=120
+   ->  Seq Scan on yelp_business  (cost=0.00..22175.24 rows=1679 width=881) (actual time=0.047..13.417 rows=50 loops=1)
+         Filter: ((((document -> 'attributes'::text) ->> 'RestaurantsPriceRange2'::text) = '2'::text) AND (((document -> 'attributes'::text) ->> 'WiFi'::text) = 'free'::text) AND (((document -> 'attributes'::text) ->> 'OutdoorSeating'::text) = 'true'::text))
+         Rows Removed by Filter: 991
+         Buffers: shared hit=120
+ Planning:
+   Buffers: shared hit=184
+ Planning Time: 1.234 ms
+ Execution Time: 13.485 ms
+(10 rows)
+
+------

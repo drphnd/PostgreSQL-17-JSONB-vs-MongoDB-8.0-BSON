@@ -1,0 +1,25 @@
+    indexrelname     | ukuran  |  bytes  
+---------------------+---------+---------
+ yelp_business_pkey  | 7976 kB | 8167424
+ idx_stars           | 3144 kB | 3219456
+ idx_city            | 1496 kB | 1531904
+ idx_price_range     | 1032 kB | 1056768
+ idx_wifi            | 1032 kB | 1056768
+ idx_outdoor_seating | 1032 kB | 1056768
+(6 rows)
+
+ tabel  
+--------
+ 135 MB
+(1 row)
+
+      indexname      |                                                                  indexdef                                                                  
+---------------------+--------------------------------------------------------------------------------------------------------------------------------------------
+ yelp_business_pkey  | CREATE UNIQUE INDEX yelp_business_pkey ON public.yelp_business USING btree (business_id)
+ idx_city            | CREATE INDEX idx_city ON public.yelp_business USING btree (((document ->> 'city'::text)))
+ idx_stars           | CREATE INDEX idx_stars ON public.yelp_business USING btree ((((document ->> 'stars'::text))::double precision))
+ idx_price_range     | CREATE INDEX idx_price_range ON public.yelp_business USING btree ((((document -> 'attributes'::text) ->> 'RestaurantsPriceRange2'::text)))
+ idx_wifi            | CREATE INDEX idx_wifi ON public.yelp_business USING btree ((((document -> 'attributes'::text) ->> 'WiFi'::text)))
+ idx_outdoor_seating | CREATE INDEX idx_outdoor_seating ON public.yelp_business USING btree ((((document -> 'attributes'::text) ->> 'OutdoorSeating'::text)))
+(6 rows)
+

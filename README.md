@@ -14,6 +14,10 @@ Supplementary material for: Pandiangan, D., & Tjahjono, L. M. "Comparative Bench
 - `scripts/extract_decomposition.py`: splits latency into pool wait (`pool_wait_ms`), query call (`db_exec_ms`), and remainder, from the raw k6 output (`data/decomposition_*.csv`).
 - `scripts/monitor_api.py`, `scripts/run_api_probe.sh`: three additional runs per system at 256 and 512 VU with CPU of the API process, k6, and host (`data/probe_runs21_23/`).
 
+## Query plans and index statistics
+- `data/query_plans/`: EXPLAIN ANALYZE (PostgreSQL) and explain with executionStats (MongoDB) for the nested-read query, index sizes, cumulative scan counts, and a plan with the index scan forced. PostgreSQL chose a sequential scan and did not use its three expression indexes; MongoDB used its compound index.
+- `scripts/run_api_probe_pgidx.sh`: optional sensitivity run for PostgreSQL with a composite expression index (not part of the reported results).
+
 ## Not included
 - Yelp Open Dataset (business file): download from https://www.yelp.com/dataset (licence applies)
 - Raw k6 output (several GB): available from the corresponding author on request

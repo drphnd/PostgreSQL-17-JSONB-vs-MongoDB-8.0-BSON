@@ -1,0 +1,552 @@
+{
+  explainVersion: '1',
+  queryPlanner: {
+    namespace: 'yelp_db.yelp_business',
+    parsedQuery: {
+      '$and': [
+        {
+          'attributes.OutdoorSeating': {
+            '$eq': true
+          }
+        },
+        {
+          'attributes.RestaurantsPriceRange2': {
+            '$eq': '2'
+          }
+        },
+        {
+          'attributes.WiFi': {
+            '$eq': 'free'
+          }
+        }
+      ]
+    },
+    indexFilterSet: false,
+    queryHash: '4A16F467',
+    planCacheShapeHash: '4A16F467',
+    planCacheKey: 'E0B299A9',
+    optimizationTimeMillis: 11,
+    maxIndexedOrSolutionsReached: false,
+    maxIndexedAndSolutionsReached: false,
+    maxScansToExplodeReached: false,
+    prunedSimilarIndexes: false,
+    winningPlan: {
+      isCached: false,
+      stage: 'LIMIT',
+      limitAmount: 50,
+      inputStage: {
+        stage: 'FETCH',
+        inputStage: {
+          stage: 'IXSCAN',
+          keyPattern: {
+            'attributes.RestaurantsPriceRange2': 1,
+            'attributes.WiFi': 1,
+            'attributes.OutdoorSeating': 1
+          },
+          indexName: 'attributes.RestaurantsPriceRange2_1_attributes.WiFi_1_attributes.OutdoorSeating_1',
+          isMultiKey: false,
+          multiKeyPaths: {
+            'attributes.RestaurantsPriceRange2': [],
+            'attributes.WiFi': [],
+            'attributes.OutdoorSeating': []
+          },
+          isUnique: false,
+          isSparse: false,
+          isPartial: false,
+          indexVersion: 2,
+          direction: 'forward',
+          indexBounds: {
+            'attributes.RestaurantsPriceRange2': [
+              '["2", "2"]'
+            ],
+            'attributes.WiFi': [
+              '["free", "free"]'
+            ],
+            'attributes.OutdoorSeating': [
+              '[true, true]'
+            ]
+          }
+        }
+      }
+    },
+    rejectedPlans: []
+  },
+  executionStats: {
+    executionSuccess: true,
+    nReturned: 50,
+    executionTimeMillis: 19,
+    totalKeysExamined: 50,
+    totalDocsExamined: 50,
+    executionStages: {
+      isCached: false,
+      stage: 'LIMIT',
+      nReturned: 50,
+      executionTimeMillisEstimate: 10,
+      works: 51,
+      advanced: 50,
+      needTime: 0,
+      needYield: 0,
+      saveState: 0,
+      restoreState: 0,
+      isEOF: 1,
+      limitAmount: 50,
+      inputStage: {
+        stage: 'FETCH',
+        nReturned: 50,
+        executionTimeMillisEstimate: 10,
+        works: 50,
+        advanced: 50,
+        needTime: 0,
+        needYield: 0,
+        saveState: 0,
+        restoreState: 0,
+        isEOF: 0,
+        docsExamined: 50,
+        alreadyHasObj: 0,
+        inputStage: {
+          stage: 'IXSCAN',
+          nReturned: 50,
+          executionTimeMillisEstimate: 10,
+          works: 50,
+          advanced: 50,
+          needTime: 0,
+          needYield: 0,
+          saveState: 0,
+          restoreState: 0,
+          isEOF: 0,
+          keyPattern: {
+            'attributes.RestaurantsPriceRange2': 1,
+            'attributes.WiFi': 1,
+            'attributes.OutdoorSeating': 1
+          },
+          indexName: 'attributes.RestaurantsPriceRange2_1_attributes.WiFi_1_attributes.OutdoorSeating_1',
+          isMultiKey: false,
+          multiKeyPaths: {
+            'attributes.RestaurantsPriceRange2': [],
+            'attributes.WiFi': [],
+            'attributes.OutdoorSeating': []
+          },
+          isUnique: false,
+          isSparse: false,
+          isPartial: false,
+          indexVersion: 2,
+          direction: 'forward',
+          indexBounds: {
+            'attributes.RestaurantsPriceRange2': [
+              '["2", "2"]'
+            ],
+            'attributes.WiFi': [
+              '["free", "free"]'
+            ],
+            'attributes.OutdoorSeating': [
+              '[true, true]'
+            ]
+          },
+          keysExamined: 50,
+          seeks: 1,
+          dupsTested: 0,
+          dupsDropped: 0
+        }
+      }
+    }
+  },
+  queryShapeHash: '5E8D351840F40352DFAB342C9719FE8377C607335646FC0A299CEB7201111F90',
+  command: {
+    find: 'yelp_business',
+    filter: {
+      'attributes.RestaurantsPriceRange2': '2',
+      'attributes.WiFi': 'free',
+      'attributes.OutdoorSeating': true
+    },
+    limit: 50,
+    '$db': 'yelp_db'
+  },
+  serverInfo: {
+    host: '7578a3b7936b',
+    port: 27017,
+    version: '8.0.34',
+    gitVersion: '51db4515a6597aedcf6188ee4e48a27e65b065ae'
+  },
+  serverParameters: {
+    internalQueryFacetBufferSizeBytes: 104857600,
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,
+    internalQueryProhibitBlockingMergeOnMongoS: 0,
+    internalQueryMaxAddToSetBytes: 104857600,
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600,
+    internalQueryFrameworkControl: 'trySbeRestricted',
+    internalQueryPlannerIgnoreIndexWithCollationForRegex: 1
+  },
+  ok: 1
+}
+------
+{
+  explainVersion: '1',
+  queryPlanner: {
+    namespace: 'yelp_db.yelp_business',
+    parsedQuery: {
+      '$and': [
+        {
+          'attributes.OutdoorSeating': {
+            '$eq': true
+          }
+        },
+        {
+          'attributes.RestaurantsPriceRange2': {
+            '$eq': '2'
+          }
+        },
+        {
+          'attributes.WiFi': {
+            '$eq': 'free'
+          }
+        }
+      ]
+    },
+    indexFilterSet: false,
+    queryHash: '4A16F467',
+    planCacheShapeHash: '4A16F467',
+    planCacheKey: 'E0B299A9',
+    optimizationTimeMillis: 0,
+    maxIndexedOrSolutionsReached: false,
+    maxIndexedAndSolutionsReached: false,
+    maxScansToExplodeReached: false,
+    prunedSimilarIndexes: false,
+    winningPlan: {
+      isCached: false,
+      stage: 'LIMIT',
+      limitAmount: 50,
+      inputStage: {
+        stage: 'FETCH',
+        inputStage: {
+          stage: 'IXSCAN',
+          keyPattern: {
+            'attributes.RestaurantsPriceRange2': 1,
+            'attributes.WiFi': 1,
+            'attributes.OutdoorSeating': 1
+          },
+          indexName: 'attributes.RestaurantsPriceRange2_1_attributes.WiFi_1_attributes.OutdoorSeating_1',
+          isMultiKey: false,
+          multiKeyPaths: {
+            'attributes.RestaurantsPriceRange2': [],
+            'attributes.WiFi': [],
+            'attributes.OutdoorSeating': []
+          },
+          isUnique: false,
+          isSparse: false,
+          isPartial: false,
+          indexVersion: 2,
+          direction: 'forward',
+          indexBounds: {
+            'attributes.RestaurantsPriceRange2': [
+              '["2", "2"]'
+            ],
+            'attributes.WiFi': [
+              '["free", "free"]'
+            ],
+            'attributes.OutdoorSeating': [
+              '[true, true]'
+            ]
+          }
+        }
+      }
+    },
+    rejectedPlans: []
+  },
+  executionStats: {
+    executionSuccess: true,
+    nReturned: 50,
+    executionTimeMillis: 1,
+    totalKeysExamined: 50,
+    totalDocsExamined: 50,
+    executionStages: {
+      isCached: false,
+      stage: 'LIMIT',
+      nReturned: 50,
+      executionTimeMillisEstimate: 0,
+      works: 51,
+      advanced: 50,
+      needTime: 0,
+      needYield: 0,
+      saveState: 0,
+      restoreState: 0,
+      isEOF: 1,
+      limitAmount: 50,
+      inputStage: {
+        stage: 'FETCH',
+        nReturned: 50,
+        executionTimeMillisEstimate: 0,
+        works: 50,
+        advanced: 50,
+        needTime: 0,
+        needYield: 0,
+        saveState: 0,
+        restoreState: 0,
+        isEOF: 0,
+        docsExamined: 50,
+        alreadyHasObj: 0,
+        inputStage: {
+          stage: 'IXSCAN',
+          nReturned: 50,
+          executionTimeMillisEstimate: 0,
+          works: 50,
+          advanced: 50,
+          needTime: 0,
+          needYield: 0,
+          saveState: 0,
+          restoreState: 0,
+          isEOF: 0,
+          keyPattern: {
+            'attributes.RestaurantsPriceRange2': 1,
+            'attributes.WiFi': 1,
+            'attributes.OutdoorSeating': 1
+          },
+          indexName: 'attributes.RestaurantsPriceRange2_1_attributes.WiFi_1_attributes.OutdoorSeating_1',
+          isMultiKey: false,
+          multiKeyPaths: {
+            'attributes.RestaurantsPriceRange2': [],
+            'attributes.WiFi': [],
+            'attributes.OutdoorSeating': []
+          },
+          isUnique: false,
+          isSparse: false,
+          isPartial: false,
+          indexVersion: 2,
+          direction: 'forward',
+          indexBounds: {
+            'attributes.RestaurantsPriceRange2': [
+              '["2", "2"]'
+            ],
+            'attributes.WiFi': [
+              '["free", "free"]'
+            ],
+            'attributes.OutdoorSeating': [
+              '[true, true]'
+            ]
+          },
+          keysExamined: 50,
+          seeks: 1,
+          dupsTested: 0,
+          dupsDropped: 0
+        }
+      }
+    }
+  },
+  queryShapeHash: '5E8D351840F40352DFAB342C9719FE8377C607335646FC0A299CEB7201111F90',
+  command: {
+    find: 'yelp_business',
+    filter: {
+      'attributes.RestaurantsPriceRange2': '2',
+      'attributes.WiFi': 'free',
+      'attributes.OutdoorSeating': true
+    },
+    limit: 50,
+    '$db': 'yelp_db'
+  },
+  serverInfo: {
+    host: '7578a3b7936b',
+    port: 27017,
+    version: '8.0.34',
+    gitVersion: '51db4515a6597aedcf6188ee4e48a27e65b065ae'
+  },
+  serverParameters: {
+    internalQueryFacetBufferSizeBytes: 104857600,
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,
+    internalQueryProhibitBlockingMergeOnMongoS: 0,
+    internalQueryMaxAddToSetBytes: 104857600,
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600,
+    internalQueryFrameworkControl: 'trySbeRestricted',
+    internalQueryPlannerIgnoreIndexWithCollationForRegex: 1
+  },
+  ok: 1
+}
+------
+{
+  explainVersion: '1',
+  queryPlanner: {
+    namespace: 'yelp_db.yelp_business',
+    parsedQuery: {
+      '$and': [
+        {
+          'attributes.OutdoorSeating': {
+            '$eq': true
+          }
+        },
+        {
+          'attributes.RestaurantsPriceRange2': {
+            '$eq': '2'
+          }
+        },
+        {
+          'attributes.WiFi': {
+            '$eq': 'free'
+          }
+        }
+      ]
+    },
+    indexFilterSet: false,
+    queryHash: '4A16F467',
+    planCacheShapeHash: '4A16F467',
+    planCacheKey: 'E0B299A9',
+    optimizationTimeMillis: 0,
+    maxIndexedOrSolutionsReached: false,
+    maxIndexedAndSolutionsReached: false,
+    maxScansToExplodeReached: false,
+    prunedSimilarIndexes: false,
+    winningPlan: {
+      isCached: false,
+      stage: 'LIMIT',
+      limitAmount: 50,
+      inputStage: {
+        stage: 'FETCH',
+        inputStage: {
+          stage: 'IXSCAN',
+          keyPattern: {
+            'attributes.RestaurantsPriceRange2': 1,
+            'attributes.WiFi': 1,
+            'attributes.OutdoorSeating': 1
+          },
+          indexName: 'attributes.RestaurantsPriceRange2_1_attributes.WiFi_1_attributes.OutdoorSeating_1',
+          isMultiKey: false,
+          multiKeyPaths: {
+            'attributes.RestaurantsPriceRange2': [],
+            'attributes.WiFi': [],
+            'attributes.OutdoorSeating': []
+          },
+          isUnique: false,
+          isSparse: false,
+          isPartial: false,
+          indexVersion: 2,
+          direction: 'forward',
+          indexBounds: {
+            'attributes.RestaurantsPriceRange2': [
+              '["2", "2"]'
+            ],
+            'attributes.WiFi': [
+              '["free", "free"]'
+            ],
+            'attributes.OutdoorSeating': [
+              '[true, true]'
+            ]
+          }
+        }
+      }
+    },
+    rejectedPlans: []
+  },
+  executionStats: {
+    executionSuccess: true,
+    nReturned: 50,
+    executionTimeMillis: 1,
+    totalKeysExamined: 50,
+    totalDocsExamined: 50,
+    executionStages: {
+      isCached: false,
+      stage: 'LIMIT',
+      nReturned: 50,
+      executionTimeMillisEstimate: 0,
+      works: 51,
+      advanced: 50,
+      needTime: 0,
+      needYield: 0,
+      saveState: 0,
+      restoreState: 0,
+      isEOF: 1,
+      limitAmount: 50,
+      inputStage: {
+        stage: 'FETCH',
+        nReturned: 50,
+        executionTimeMillisEstimate: 0,
+        works: 50,
+        advanced: 50,
+        needTime: 0,
+        needYield: 0,
+        saveState: 0,
+        restoreState: 0,
+        isEOF: 0,
+        docsExamined: 50,
+        alreadyHasObj: 0,
+        inputStage: {
+          stage: 'IXSCAN',
+          nReturned: 50,
+          executionTimeMillisEstimate: 0,
+          works: 50,
+          advanced: 50,
+          needTime: 0,
+          needYield: 0,
+          saveState: 0,
+          restoreState: 0,
+          isEOF: 0,
+          keyPattern: {
+            'attributes.RestaurantsPriceRange2': 1,
+            'attributes.WiFi': 1,
+            'attributes.OutdoorSeating': 1
+          },
+          indexName: 'attributes.RestaurantsPriceRange2_1_attributes.WiFi_1_attributes.OutdoorSeating_1',
+          isMultiKey: false,
+          multiKeyPaths: {
+            'attributes.RestaurantsPriceRange2': [],
+            'attributes.WiFi': [],
+            'attributes.OutdoorSeating': []
+          },
+          isUnique: false,
+          isSparse: false,
+          isPartial: false,
+          indexVersion: 2,
+          direction: 'forward',
+          indexBounds: {
+            'attributes.RestaurantsPriceRange2': [
+              '["2", "2"]'
+            ],
+            'attributes.WiFi': [
+              '["free", "free"]'
+            ],
+            'attributes.OutdoorSeating': [
+              '[true, true]'
+            ]
+          },
+          keysExamined: 50,
+          seeks: 1,
+          dupsTested: 0,
+          dupsDropped: 0
+        }
+      }
+    }
+  },
+  queryShapeHash: '5E8D351840F40352DFAB342C9719FE8377C607335646FC0A299CEB7201111F90',
+  command: {
+    find: 'yelp_business',
+    filter: {
+      'attributes.RestaurantsPriceRange2': '2',
+      'attributes.WiFi': 'free',
+      'attributes.OutdoorSeating': true
+    },
+    limit: 50,
+    '$db': 'yelp_db'
+  },
+  serverInfo: {
+    host: '7578a3b7936b',
+    port: 27017,
+    version: '8.0.34',
+    gitVersion: '51db4515a6597aedcf6188ee4e48a27e65b065ae'
+  },
+  serverParameters: {
+    internalQueryFacetBufferSizeBytes: 104857600,
+    internalQueryFacetMaxOutputDocSizeBytes: 104857600,
+    internalLookupStageIntermediateDocumentMaxSizeBytes: 104857600,
+    internalDocumentSourceGroupMaxMemoryBytes: 104857600,
+    internalQueryMaxBlockingSortMemoryUsageBytes: 104857600,
+    internalQueryProhibitBlockingMergeOnMongoS: 0,
+    internalQueryMaxAddToSetBytes: 104857600,
+    internalDocumentSourceSetWindowFieldsMaxMemoryBytes: 104857600,
+    internalQueryFrameworkControl: 'trySbeRestricted',
+    internalQueryPlannerIgnoreIndexWithCollationForRegex: 1
+  },
+  ok: 1
+}
+------
