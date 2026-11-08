@@ -10,6 +10,10 @@ Supplementary material for: Pandiangan, D., & Tjahjono, L. M. "Comparative Bench
 - `scripts/`, `start_env.sh`, `docs/`: run scripts and runbooks
 - `data/`: aggregated k6 summaries and container resource logs (nested reads: runs 11-13; mixed 80:20: one run per system)
 
+## Latency decomposition and API CPU
+- `scripts/extract_decomposition.py`: splits latency into pool wait (`pool_wait_ms`), query call (`db_exec_ms`), and remainder, from the raw k6 output (`data/decomposition_*.csv`).
+- `scripts/monitor_api.py`, `scripts/run_api_probe.sh`: three additional runs per system at 256 and 512 VU with CPU of the API process, k6, and host (`data/probe_runs21_23/`).
+
 ## Not included
 - Yelp Open Dataset (business file): download from https://www.yelp.com/dataset (licence applies)
 - Raw k6 output (several GB): available from the corresponding author on request
