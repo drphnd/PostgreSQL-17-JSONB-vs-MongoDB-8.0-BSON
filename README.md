@@ -21,6 +21,9 @@ Supplementary material for: Pandiangan, D., & Tjahjono, L. M. "Comparative Bench
 ## Sensitivity test: PostgreSQL with a composite index
 - `data/pgidx_runs31_33/`: three additional PostgreSQL runs at 256 and 512 VU after adding a composite expression index on the three filtered attributes, so that the planner used an index plan (plan files included). Reported as a sensitivity analysis; the main results are unchanged.
 
+## Mixed workload repeats
+- `data/mixed_runs4_5/`: two additional mixed-workload runs (80:20) per system (summaries, decomposition, resource logs, run logs). With run 3 they give three runs per system. The composite index of the sensitivity test was dropped before these runs.
+
 ## Not included
 - Yelp Open Dataset (business file): download from https://www.yelp.com/dataset (licence applies)
 - Raw k6 output (several GB): available from the corresponding author on request

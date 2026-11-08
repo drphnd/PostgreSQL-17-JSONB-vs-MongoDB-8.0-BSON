@@ -1,0 +1,89 @@
+=== RESET ENVIRONMENT (size=full) ===
+Dataset dimuat: 150346 dokumen dalam 18.33s
+[Postgres] Truncating table...
+[Postgres] Ingesting 150346 documents...
+[Postgres] Rebuilding expression indexes...
+[Postgres] Running VACUUM ANALYZE...
+[Postgres] Kondisi awal (live, dead, dead_pct): (150692, 0, Decimal('0.00'))
+[MongoDB] Dropping collection...
+[MongoDB] Ingesting 150346 documents...
+[MongoDB] Rebuilding indexes...
+[MongoDB] Kondisi awal: 150346 dokumen tersimpan.
+=== RESET SELESAI dalam 131.92s ===
+{"status":"reloaded","pg_ids":150346,"mongo_ids":150346}
+
+     ✓ status 200
+     ✓ not timeout
+
+     checks.........................: 100.00% ✓ 2373560    ✗ 0      
+     data_received..................: 234 MB  159 kB/s
+     data_sent......................: 143 MB  97 kB/s
+     db_exec_ms.....................: avg=24.11ms  min=1.46ms  med=14.02ms  max=268.38ms p(90)=56.11ms  p(95)=64.35ms 
+     http_req_blocked...............: avg=4.8µs    min=1.08µs  med=3.86µs   max=24.05ms  p(90)=5.3µs    p(95)=5.96µs  
+     http_req_connecting............: avg=469ns    min=0s      med=0s       max=23.95ms  p(90)=0s       p(95)=0s      
+     http_req_duration..............: avg=233.7ms  min=2.88ms  med=158.16ms max=3.06s    p(90)=526.87ms p(95)=660.38ms
+       { expected_response:true }...: avg=233.7ms  min=2.88ms  med=158.16ms max=3.06s    p(90)=526.87ms p(95)=660.38ms
+   ✓ http_req_failed................: 0.00%   ✓ 0          ✗ 1186780
+     http_req_receiving.............: avg=51.58µs  min=11.92µs med=41.54µs  max=540.74ms p(90)=78.25µs  p(95)=91.28µs 
+     http_req_sending...............: avg=19.41µs  min=4.28µs  med=14.34µs  max=527.28ms p(90)=22.45µs  p(95)=42.99µs 
+     http_req_tls_handshaking.......: avg=0s       min=0s      med=0s       max=0s       p(90)=0s       p(95)=0s      
+     http_req_waiting...............: avg=233.63ms min=2.8ms   med=158.1ms  max=3.06s    p(90)=526.8ms  p(95)=660.31ms
+     http_reqs......................: 1186780 804.693558/s
+     iteration_duration.............: avg=282.31ms min=53.13ms med=208.8ms  max=3.12s    p(90)=573.61ms p(95)=699.75ms
+     iterations.....................: 1186780 804.693558/s
+     pool_wait_ms...................: avg=171.42ms min=4µs     med=84.91ms  max=2.97s    p(90)=435ms    p(95)=572.53ms
+     vus............................: 512     min=0        max=512  
+     vus_max........................: 911     min=911      max=911  
+
+Memproses mixed_postgres_run4.ndjson ...
+  ... 200000 data point diproses (7.3s)
+  ... 400000 data point diproses (11.6s)
+  ... 600000 data point diproses (18.2s)
+  ... 800000 data point diproses (23.4s)
+  ... 1000000 data point diproses (27.8s)
+
+Selesai: 20178198 baris dipindai, 1186780 data point cocok, 32.8s
+
+=== Ringkasan Mixed Workload: scn_mixed_postgres_run4 ===
+Total nilai negatif (dikecualikan): 0
+
+checkpoint  op           count       p50       p95       p99  error_rate%
+-------------------------------------------------------------------------
+vu_005      read          4891      4.23      5.05      5.83         0.00
+vu_005      update        1219      6.44      9.63     10.98         0.00
+vu_050      read        105749     21.70     27.63    132.88         0.00
+vu_050      update       26437     23.94     30.31    138.49         0.00
+vu_100      read        142916     47.99    144.90    179.81         0.00
+vu_100      update       35654     52.26    147.12    186.10         0.00
+vu_200      read        148760    147.93    291.56    396.35         0.00
+vu_200      update       37128    154.02    303.87    415.12         0.00
+vu_256      read        196431    208.38    413.89    567.89         0.00
+vu_256      update       48970    219.84    422.57    575.09         0.00
+vu_400      read        153490    342.21    771.53   1156.95         0.00
+vu_400      update       38283    349.20    773.79   1159.98         0.00
+vu_512      read        197486    458.98   1010.48   1444.40         0.00
+vu_512      update       49366    464.71   1021.24   1475.54         0.00
+
+Disimpan ke summary_scn_mixed_postgres_run4.csv
+
+Langkah selanjutnya: bandingkan kolom p99 pada baris op="read" di sini
+dengan p99 Skenario 1 (PostgreSQL)/2 (MongoDB) pada checkpoint yang sama,
+dan baris op="update" dengan Skenario 3/4, untuk mengukur interferensi
+akibat beban campuran dibandingkan kondisi terisolasi.
+baris: 7310 | jeda proses >1 s: 0 | lompatan jam dinding >0.5 s: 16
+jeda: []
+lompatan: [(1794155431, 0.54), (1794155464, 0.56), (1794155529, 0.58), (1794155562, 0.54), (1794155595, 0.55), (1794155628, 0.55), (1794155660, 0.55), (1794155693, 0.55), (1794155726, 0.54), (1794155759, 0.54)]
+ 949723 http://localhost:8000/read/postgres?mode=nested	200
+ 237057 http://localhost:8000/update/postgres	200
+baris: 7310 | jeda proses >1 s: 0 | lompatan jam dinding >0.5 s: 16
+jeda: []
+lompatan: [(1794155431, 0.54), (1794155464, 0.56), (1794155529, 0.58), (1794155562, 0.54), (1794155595, 0.55), (1794155628, 0.55), (1794155660, 0.55), (1794155693, 0.55), (1794155726, 0.54), (1794155759, 0.54)]
+checkpoint,n_lat,n_hdr,mean_lat,mean_pool,mean_exec,mean_rest,p50_lat,p99_lat,p50_pool,p99_pool,p50_exec,p99_exec
+vu_005,6110,6110,4.85,0.04,3.13,1.68,4.35,9.73,0.01,0.03,2.66,7.94
+vu_050,132186,132186,21.63,0.06,7.82,13.75,22.09,134.39,0.01,0.21,7.05,17.87
+vu_100,178570,178570,56.41,9.76,20.80,25.84,48.76,181.05,0.01,41.84,13.95,139.33
+vu_200,185888,185888,153.71,86.17,27.81,39.73,149.05,401.47,70.34,333.46,14.68,169.83
+vu_256,245401,245401,210.41,141.23,27.51,41.67,211.00,569.00,140.28,484.51,15.30,166.21
+vu_400,191773,191773,349.14,276.13,26.69,46.31,343.57,1157.68,265.39,1032.42,15.44,168.98
+vu_512,246852,246852,474.91,397.25,27.60,50.06,460.15,1448.46,389.13,1334.05,15.70,179.68
+Disimpan: decomposition_mixed_postgres_run4.csv

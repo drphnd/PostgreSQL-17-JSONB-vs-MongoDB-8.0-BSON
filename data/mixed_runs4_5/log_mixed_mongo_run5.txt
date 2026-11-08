@@ -1,0 +1,128 @@
+=== RESET ENVIRONMENT (size=full) ===
+Dataset dimuat: 150346 dokumen dalam 19.55s
+[Postgres] Truncating table...
+[Postgres] Ingesting 150346 documents...
+[Postgres] Rebuilding expression indexes...
+[Postgres] Running VACUUM ANALYZE...
+[Postgres] Kondisi awal (live, dead, dead_pct): (150692, 0, Decimal('0.00'))
+[MongoDB] Dropping collection...
+[MongoDB] Ingesting 150346 documents...
+[MongoDB] Rebuilding indexes...
+[MongoDB] Kondisi awal: 150346 dokumen tersimpan.
+=== RESET SELESAI dalam 134.36s ===
+{"status":"reloaded","pg_ids":150346,"mongo_ids":150346}
+time="2026-11-09T01:40:30+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:30+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:30+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:30+07:00" level=warning msg="Request Failed" error="Put \"http://localhost:8000/update/mongo\": request timeout"
+time="2026-11-09T01:40:30+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:30+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:30+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:30+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:30+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:30+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:30+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:30+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:30+07:00" level=warning msg="Request Failed" error="Put \"http://localhost:8000/update/mongo\": request timeout"
+time="2026-11-09T01:40:30+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:30+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:30+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:30+07:00" level=warning msg="Request Failed" error="Put \"http://localhost:8000/update/mongo\": request timeout"
+time="2026-11-09T01:40:30+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:30+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:30+07:00" level=warning msg="Request Failed" error="Put \"http://localhost:8000/update/mongo\": request timeout"
+time="2026-11-09T01:40:30+07:00" level=warning msg="Request Failed" error="Put \"http://localhost:8000/update/mongo\": request timeout"
+time="2026-11-09T01:40:30+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:30+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:31+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:31+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:31+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:31+07:00" level=warning msg="Request Failed" error="Put \"http://localhost:8000/update/mongo\": request timeout"
+time="2026-11-09T01:40:31+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:31+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:31+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:31+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:31+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:31+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:31+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:31+07:00" level=warning msg="Request Failed" error="Put \"http://localhost:8000/update/mongo\": request timeout"
+time="2026-11-09T01:40:31+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:31+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:31+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+time="2026-11-09T01:40:31+07:00" level=warning msg="Request Failed" error="Get \"http://localhost:8000/read/mongo?mode=nested\": request timeout"
+
+     ✗ status 200
+      ↳  99% — ✓ 323318 / ✗ 39
+     ✗ not timeout
+      ↳  99% — ✓ 323318 / ✗ 39
+
+     checks.........................: 99.98% ✓ 646636     ✗ 78    
+     data_received..................: 65 MB  44 kB/s
+     data_sent......................: 38 MB  26 kB/s
+     db_exec_ms.....................: avg=830.86ms min=1.21ms  med=792.43ms max=3.81s    p(90)=1.82s   p(95)=2.48s   
+     http_req_blocked...............: avg=6.34µs   min=1.09µs  med=4.02µs   max=22.61ms  p(90)=5.29µs  p(95)=6.19µs  
+     http_req_connecting............: avg=1.48µs   min=0s      med=0s       max=22.5ms   p(90)=0s      p(95)=0s      
+     http_req_duration..............: avg=991.51ms min=2.01ms  med=875.17ms max=1m0s     p(90)=2.04s   p(95)=2.51s   
+       { expected_response:true }...: avg=984.36ms min=2.01ms  med=875.11ms max=1m0s     p(90)=2.04s   p(95)=2.51s   
+   ✓ http_req_failed................: 0.01%  ✓ 39         ✗ 323318
+     http_req_receiving.............: avg=62.63µs  min=0s      med=65.36µs  max=550.24ms p(90)=82.94µs p(95)=104.72µs
+     http_req_sending...............: avg=19.91µs  min=3.59µs  med=14.62µs  max=4.72ms   p(90)=27.1µs  p(95)=55.14µs 
+     http_req_tls_handshaking.......: avg=0s       min=0s      med=0s       max=0s       p(90)=0s      p(95)=0s      
+     http_req_waiting...............: avg=991.43ms min=1.92ms  med=875.08ms max=1m0s     p(90)=2.04s   p(95)=2.51s   
+     http_reqs......................: 323357 219.695514/s
+     iteration_duration.............: avg=1.03s    min=52.36ms med=925.29ms max=1m0s     p(90)=2.09s   p(95)=2.55s   
+     iterations.....................: 323357 219.695514/s
+     pool_wait_ms...................: avg=17ns     min=0s      med=0s       max=509µs    p(90)=0s      p(95)=0s      
+     vus............................: 101    min=0        max=512 
+     vus_max........................: 911    min=911      max=911 
+
+Memproses mixed_mongo_run5.ndjson ...
+  ... 200000 data point diproses (3.2s)
+
+Selesai: 5499933 baris dipindai, 323357 data point cocok, 5.2s
+
+=== Ringkasan Mixed Workload: scn_mixed_mongo_run5 ===
+Total nilai negatif (dikecualikan): 0
+
+checkpoint  op           count       p50       p95       p99  error_rate%
+-------------------------------------------------------------------------
+vu_005      read          4847      4.37      7.63      9.73         0.00
+vu_005      update        1294      2.43      4.54      6.34         0.00
+vu_050      read         43712    121.62    251.84    299.44         0.00
+vu_050      update       10902     93.99    221.07    246.90         0.00
+vu_100      read         38053    343.98    484.60    617.57         0.00
+vu_100      update        9577    332.83    472.66    580.10         0.00
+vu_200      read         37466    840.06    921.79   1006.05         0.00
+vu_200      update        9389    829.76    915.66   1001.63         0.00
+vu_256      read         48509   1060.29   1160.99   1565.61         0.00
+vu_256      update       12165   1052.84   1146.07   1552.11         0.00
+vu_400      read         38678   1650.54   1863.85   1986.39         0.00
+vu_400      update        9756   1070.88   1852.36   1978.15         0.00
+vu_512      read         47290   2095.81   2787.55   3136.06         0.07
+vu_512      update       11680   1511.11   2771.68   3144.32         0.06
+
+Disimpan ke summary_scn_mixed_mongo_run5.csv
+
+Langkah selanjutnya: bandingkan kolom p99 pada baris op="read" di sini
+dengan p99 Skenario 1 (PostgreSQL)/2 (MongoDB) pada checkpoint yang sama,
+dan baris op="update" dengan Skenario 3/4, untuk mengukur interferensi
+akibat beban campuran dibandingkan kondisi terisolasi.
+baris: 7319 | jeda proses >1 s: 0 | lompatan jam dinding >0.5 s: 11
+jeda: []
+lompatan: [(1794161954, 0.52), (1794162003, 0.64), (1794162068, 0.53), (1794162101, 0.51), (1794162167, 0.55), (1794162199, 0.55), (1794162232, 0.54), (1794162265, 0.56), (1794162298, 0.51), (1794162331, 0.54)]
+     32 http://localhost:8000/read/mongo?mode=nested	0
+ 258555 http://localhost:8000/read/mongo?mode=nested	200
+      7 http://localhost:8000/update/mongo	0
+  64763 http://localhost:8000/update/mongo	200
+baris: 7319 | jeda proses >1 s: 0 | lompatan jam dinding >0.5 s: 11
+jeda: []
+lompatan: [(1794161954, 0.52), (1794162003, 0.64), (1794162068, 0.53), (1794162101, 0.51), (1794162167, 0.55), (1794162199, 0.55), (1794162232, 0.54), (1794162265, 0.56), (1794162298, 0.51), (1794162331, 0.54)]
+checkpoint,n_lat,n_hdr,mean_lat,mean_pool,mean_exec,mean_rest,p50_lat,p99_lat,p50_pool,p99_pool,p50_exec,p99_exec
+vu_005,6141,6141,4.56,0.00,3.41,1.15,4.18,9.47,0.00,0.00,3.27,7.86
+vu_050,54614,54614,125.23,0.00,83.98,41.25,115.48,293.01,0.00,0.00,76.61,234.33
+vu_100,47630,47630,353.07,0.00,313.11,39.96,341.82,610.55,0.00,0.00,325.87,488.27
+vu_200,46855,46855,761.42,0.00,722.09,39.33,837.92,1005.03,0.00,0.00,822.69,994.82
+vu_256,60674,60674,1012.02,0.00,953.97,58.05,1058.94,1563.42,0.00,0.00,1049.04,1182.42
+vu_400,48434,48434,1524.52,0.00,1199.19,325.34,1638.67,1985.08,0.00,0.00,1078.40,1927.69
+vu_512,58970,58970,2097.00,0.00,1684.22,412.79,2090.61,3136.79,0.00,0.00,1465.01,2958.88
+Disimpan: decomposition_mixed_mongo_run5.csv
