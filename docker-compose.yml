@@ -1,0 +1,44 @@
+services:
+  postgres_jsonb:
+    image: postgres:17
+    container_name: ta_postgres_17
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: password123
+      POSTGRES_DB: yelp_db
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+      - ./init_postgres.sql:/docker-entrypoint-initdb.d/init_postgres.sql:ro
+    # PENTING: deploy.resources.limits TIDAK berlaku di docker compose biasa
+    # (hanya aktif di mode Swarm). cpus/mem_limit di bawah ini yang benar-benar
+    # membatasi resource pada `docker compose up` non-swarm.
+    cpus: 2.0
+    mem_limit: 2g
+
+  mongodb_bson:
+    image: mongo:8.0
+    container_name: ta_mongodb_8
+    restart: unless-stopped
+    # Auth dinonaktifkan (tanpa MONGO_INITDB_ROOT_USERNAME/PASSWORD) supaya
+    # konsisten dengan PostgreSQL (yang juga tanpa auth tambahan selain
+    # user admin default) dan supaya connection string di app/main.py &
+    # reset_environment.py tidak perlu kredensial tambahan. Kalau kamu tetap
+    # ingin auth aktif, beri tahu saya -- connection string di semua script
+    # perlu disesuaikan (mongodb://admin:password123@localhost:27017).
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo_data:/data/db
+    cpus: 2.0
+    mem_limit: 2g
+
+volumes:
+  pg_data:
+  mongo_data:
+
+# PENTING (WSL2): folder proyek ini harus di filesystem Linux (~/...),
+# bukan /mnt/c/... atau /mnt/d/... -- kamu sudah benar menaruhnya di
+# ~/Riset_TA_Database, jadi ini sudah sesuai.

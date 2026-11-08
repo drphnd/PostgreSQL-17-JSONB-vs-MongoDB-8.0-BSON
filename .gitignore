@@ -1,0 +1,8 @@
+.env
+*.log
+*.ndjson
+*.ndjson.gz
+__pycache__/
+*.tar.gz
+yelp_*.json
+env_ta/
