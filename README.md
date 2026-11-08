@@ -18,6 +18,9 @@ Supplementary material for: Pandiangan, D., & Tjahjono, L. M. "Comparative Bench
 - `data/query_plans/`: EXPLAIN ANALYZE (PostgreSQL) and explain with executionStats (MongoDB) for the nested-read query, index sizes, cumulative scan counts, and a plan with the index scan forced. PostgreSQL chose a sequential scan and did not use its three expression indexes; MongoDB used its compound index.
 - `scripts/run_api_probe_pgidx.sh`: optional sensitivity run for PostgreSQL with a composite expression index (not part of the reported results).
 
+## Sensitivity test: PostgreSQL with a composite index
+- `data/pgidx_runs31_33/`: three additional PostgreSQL runs at 256 and 512 VU after adding a composite expression index on the three filtered attributes, so that the planner used an index plan (plan files included). Reported as a sensitivity analysis; the main results are unchanged.
+
 ## Not included
 - Yelp Open Dataset (business file): download from https://www.yelp.com/dataset (licence applies)
 - Raw k6 output (several GB): available from the corresponding author on request

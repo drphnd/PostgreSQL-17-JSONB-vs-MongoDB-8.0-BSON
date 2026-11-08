@@ -1,0 +1,6 @@
+                                                                                                                              QUERY PLAN                                                                                                                               
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ Limit  (cost=0.29..172.28 rows=50 width=880)
+   ->  Index Scan using idx_composite_nested on yelp_business  (cost=0.29..5589.87 rows=1625 width=880)
+         Index Cond: ((((document -> 'attributes'::text) ->> 'RestaurantsPriceRange2'::text) = '2'::text) AND (((document -> 'attributes'::text) ->> 'WiFi'::text) = 'free'::text) AND (((document -> 'attributes'::text) ->> 'OutdoorSeating'::text) = 'true'::text))
+(3 rows)
